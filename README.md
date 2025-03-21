@@ -68,6 +68,51 @@ rqt_plot # or just 'rqt' then select Plugins -> Visualization -> Plot
 ```
 
 Then enter these topics:
-	•	_/cubic_traj_position/data[0]_
-	•	_/cubic_traj_velocity/data[0]_
-	•	_/cubic_traj_acceleration/data[0]_
+- _/cubic_traj_position/data[0]_
+- _/cubic_traj_velocity/data[0]_
+- _/cubic_traj_acceleration/data[0]_
+
+You can also run:
+```bash
+ros2 topic echo /cubic_traj_coeffs
+```
+
+## Custom Interfaces
+
+### CubicTrajParams.msg
+```
+float64 p0
+float64 pf
+float64 v0
+float64 vf
+float64 t0
+float64 tf
+```
+
+### CubicTrajCoeffs.msg
+```
+float64 p0
+float64 pf
+float64 v0
+float64 vf
+float64 t0
+float64 tf
+```
+
+### ComputeCubicTraj.srv
+```
+float64 p0
+float64 pf
+float64 v0
+float64 vf
+float64 t0
+float64 tf
+---
+float64 a0
+float64 a1
+float64 a2
+float64 a3
+```
+
+## Author
+**Name: Ranjan Akarsh**
