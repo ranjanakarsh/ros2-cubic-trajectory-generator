@@ -48,3 +48,26 @@ ar_test/
 | compute_cubic_coeffs | Provides a service to compute cubic trajectory coefficients. |
 | cubic_traj_planner | Calls the service and publishes the computed coefficients. |
 | plot_cubic_traj | Subscribes to coefficients and publishes position, velocity, and acceleration for plotting. | 
+
+## Building the package
+```bash
+cd ~/ros2_ws # the directory you put 'src' in 
+colcon build --packages-select ar_test --symlink-install
+source install/setup.zsh
+```
+
+## Launching the system
+```bash
+ros2 launch ar_test cubic_traj_gen.launch.py
+```
+This command runs all four nodes.
+
+### Visualizing the plot
+```bash
+rqt_plot # or just 'rqt' then select Plugins -> Visualization -> Plot
+```
+
+Then enter these topics:
+	•	_/cubic_traj_position/data[0]_
+	•	_/cubic_traj_velocity/data[0]_
+	•	_/cubic_traj_acceleration/data[0]_
