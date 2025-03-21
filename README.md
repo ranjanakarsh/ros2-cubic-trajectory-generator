@@ -40,6 +40,11 @@ ar_test/
 └── README.txt
 ```
 
-| Attempt | #1    | #2    |
-| :---:   | :---: | :---: |
-| Seconds | 301   | 283   |
+## Node Descriptions
+
+| Node Name | Description |
+| :---:   | :---: |
+| points_generator | Publishes random initial/final positions & velocities every 10 seconds. |
+| compute_cubic_coeffs | Provides a service to compute cubic trajectory coefficients. |
+| cubic_traj_planner | Calls the service and publishes the computed coefficients. |
+| plot_cubic_traj | Subscribes to coefficients and publishes position, velocity, and acceleration for plotting. | 
